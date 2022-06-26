@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 
 const About = () => {
   return (
-    <div style={{padding: "20px 40px"}}>
+    <div>
       <Header/>
       About Company
       <Link to="/">Back to Home</Link>

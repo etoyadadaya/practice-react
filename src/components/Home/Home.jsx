@@ -36,6 +36,9 @@ const Home = () => {
             </div>
           </div>
         </div>
+        <div className={styles.secondSection}>
+
+        </div>
       </div>
 
     </div>
