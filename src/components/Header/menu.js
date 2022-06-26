@@ -1,14 +1,18 @@
 export const menu = [
   {
-    title: 'about',
-    link: '/about'
+    title: "About Us",
+    link: "/about"
   },
   {
-    title: 'pricing',
-    link: '/'
+    title: "Our Project",
+    link: "/projects"
   },
   {
-    title: 'dashboard',
-    link: '/'
+    title: "Contact",
+    link: "/contact"
+  },
+  {
+    title: "Resources",
+    link: "/resources"
   }
 ]

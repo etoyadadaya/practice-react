@@ -1,19 +1,18 @@
-import React from 'react'
-import LogoImage from '../../assets/img/react.svg'
+import React from "react"
+import LogoImage from "../../assets/img/logo.png"
 import {menu} from "./menu"
 import {Link} from "react-router-dom"
-import { useNavigate } from 'react-router-dom';
 
-import styles from './Header.module.scss'
+import styles from "./Header.module.scss"
 
 const Header = () => {
-  const history = useNavigate();
   return (
     <div className={styles.header}>
       <div className={styles.logo}>
-        <img src={LogoImage} alt="" height='50' width='60' />
+        <Link to={"/"}>
+          <img src={LogoImage} alt="" height="18" width="124"/>
+        </Link>
       </div>
-      <div className={styles.wrapper}>
         <ul className={styles.menu}>
           {menu.map((item, idx) => (
             <li key={`menu item ${idx}`}>
@@ -22,13 +21,10 @@ const Header = () => {
           ))}
         </ul>
         <div className={styles.buttons}>
-          <button
-            className={styles['login-button']}
-            onClick={() => history('/about')}
-          >Login</button>
-          <button className={styles['sign-up-button']}>Sign Up</button>
+          <Link to={"/sign-up"}>
+            <button className={styles["sign-up-button"]}>Sign Up</button>
+          </Link>
         </div>
-      </div>
     </div>
   )
 }

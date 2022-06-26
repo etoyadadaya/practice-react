@@ -1,56 +1,121 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Poppins:ital,wght@0,400;0,700;1,900&family=Source+Sans+Pro&display=swap');
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Убираем внутренние отступы */
+ul[class], ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body, h1, h2, h3, h4, p, ul[class], ol[class], li, figure, figcaption, blockquote, dl, dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class], ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 40px;
+  background-color: #030812;
+  padding: 20px 150px;
 
-  .wrapper {
+  .menu {
+    display: inline-flex;
+    gap: 25px;
+    list-style-type: none;
+    padding-right: 20px;
+
+    > li {
+
+
+      > a {
+        display: block;
+        font-size: 16px;
+        color: #FFFFFF;
+        padding: 0 12px;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .buttons {
     display: flex;
     align-items: center;
+    background-color: transparent;
 
-    .menu {
-      list-style-type: none;
-      padding-right: 20px;
-      border-right: 1px solid #EDEDED;
+    > button {
+      padding: 0;
+      border: none;
+      background-color: transparent;
+    }
 
-      >li {
-        display: inline-block;
-
-        >a {
-          display: block;
-          font-size: 16px;
-          color: #222;
-          padding: 0 12px;
-          text-decoration: none;
-        }
-
-      }
-
-      .buttons {
-        display: flex;
-        align-items: center;
-        background-color: transparent;
-
-        >button {
-          cursor: pointer;
-          border: none;
-          outline: none;
-          padding-left: 20px;
-        }
-
-        .login-button {
-          font-size: 16px;
-          background-color: #222222;
-          color: #222;
-          padding: 0 6px;
-        }
-
-        .sign-up-button {
-          margin-left: 15px;
-          padding: 10px 8px;
-          border: 1px solid #E1E1E1;
-        }
-      }
+    .sign-up-button {
+      width: 150px;
+      margin-left: 15px;
+      padding: 10px 8px;
+      border: 1px solid #FC4F4F;
+      border-radius: 10px;
+      color: #FC4F4F;
+      font-size: 16px;
+      background-color: #030812;
+      cursor: pointer;
     }
   }
 }
